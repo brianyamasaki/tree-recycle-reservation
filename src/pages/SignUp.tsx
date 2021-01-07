@@ -36,6 +36,7 @@ const Signup = () => {
   return (
     <>
       <h1>Sign Up For a Free Account</h1>
+      <p>Please create an account to reserve a drop-off time. Your phone and email is only used to identify you and you will not receive junk email.</p>
       <h3>Accout Using Mobile Phone</h3>
       <p>Using this method will send a text message to your mobile phone. You may incur fees.</p>
       <PhoneAuthForm submitFn={submitPhone} errorMsg={phoneErrorMsg} />

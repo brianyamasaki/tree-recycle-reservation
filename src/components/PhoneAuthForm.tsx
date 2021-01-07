@@ -1,7 +1,7 @@
 import React from 'react';
 import firebase from 'firebase/app';
 import { Button, Form, FormGroup, Label, Input, Col, Alert } from 'reactstrap';
-import { formatPhoneNumber } from '../utilities/formatStrings';
+import { formatPhoneNumber, isValidPhoneNumber } from '../utilities/formatStrings';
 
 declare global {
   interface Window {
@@ -58,12 +58,15 @@ const PhoneAuthForm = ({submitFn, errorMsg}: FormProps) => {
               placeholder="Enter your mobile phone number" 
               onChange={onChangePhone}
               value={phoneNumber}
+              valid={isValidPhoneNumber(phoneNumber)}
               required
             />
           </Col>
         </FormGroup>
         <Alert isOpen={!!errorMsg}>{errorMsg}</Alert>
-        <Button id="sign-in-button" color="primary" type="submit">Create Phone Account</Button>
+        <Button id="sign-in-button" color="primary" type="submit" disabled={!isValidPhoneNumber(phoneNumber)}>
+          Create Phone Account
+        </Button>
 
     </Form>
   )

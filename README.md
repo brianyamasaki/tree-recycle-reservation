@@ -1,3 +1,7 @@
+# Tree Recycle Reservation project
+
+A barebones project to allow organizations to accept reservations and picking up of items at the reserved times.
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).

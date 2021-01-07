@@ -1,5 +1,6 @@
 import React from 'react';
 import { Button, Form, FormGroup, Label, Input, Col, Alert } from 'reactstrap';
+import { isValidEmail } from '../utilities/formatStrings';
 
 export type EmailPasswordFormReturn = {
   email: string,
@@ -40,18 +41,30 @@ const EmailPasswordForm = ({
               id="email" 
               placeholder="Enter your email" 
               onChange={onChangeEmail}
+              required
               value={email}
+              valid={isValidEmail(email)}
             />
           </Col>
         </FormGroup>
         <FormGroup className="text-right" row>
           <Label for="password" sm={2}>Password</Label>
           <Col sm={10}>
-            <Input type="password" name="password" id="password" placeholder="Enter your password" value={password} onChange={onChangePassword} />
+            <Input 
+              type="password" 
+              name="password" 
+              id="password" 
+              placeholder="Enter your password" 
+              value={password} 
+              onChange={onChangePassword} 
+              required
+            />
           </Col>
         </FormGroup>
         <Alert isOpen={!!errorMsg}>{errorMsg}</Alert>
-        <Button color="primary" type="submit">Create Email Account</Button>
+        <Button color="primary" type="submit" disabled={!isValidEmail(email)}>
+          Create Email Account
+        </Button>
       </Form>
     </>
   );

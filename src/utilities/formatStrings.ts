@@ -23,6 +23,6 @@ export const isValidPhoneNumber = (phoneNumber: string): boolean => {
 // A very poor email checker
 export const isValidEmail = (emailAddress: string): boolean => {
   const iAt = emailAddress.indexOf('@');
-  const iDot = emailAddress.indexOf('.');
+  const iDot = emailAddress.lastIndexOf('.');
   return iAt > 0 && iDot > iAt;
 }
