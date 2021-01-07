@@ -39,8 +39,16 @@ Instead, it will copy all the configuration files and the transitive dependencie
 
 You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
 
-## Learn More
+## Connect to Firebase
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+After you create a project in Firebase, you need to put the project "keys" in a file called `.env` or `.env.local`. Start with the code snippet below and copy/paste the "keys" between the double quotes below. This file will NOT be copied to Git or GitHub so every developer must have this file added to their source code.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+```
+REACT_APP_FIREBASE_API_KEY=""
+REACT_APP_FIREBASE_AUTH_DOMAIN=""
+REACT_APP_FIREBASE_DATABASE_URL=""
+REACT_APP_FIREBASE_PROJECT_ID=""
+REACT_APP_FIREBASE_STORAGE_BUCKET=""
+REACT_APP_FIREBASE_MESSAGING_SENDER_ID=""
+REACT_APP_FIREBASE_APP_ID=""
+```
