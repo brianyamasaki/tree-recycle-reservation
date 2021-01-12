@@ -1,14 +1,15 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import { Collapse, Navbar, NavbarToggler, NavbarBrand, Nav, NavItem, NavLink } from 'reactstrap';
 import firebase from 'firebase/app';
+import { AuthContext } from '../contexts/AuthProvider';
 
 const Menubar = () => {
-  const user = firebase.auth().currentUser;
+  const appUser = useContext(AuthContext);
   const [collapsed, setCollapsed] = useState(true);
-  const authLinkText = !!user ? "Sign Out" : "Sign In";
+  const authLinkText = appUser.isLoggedIn ? "Sign Out" : "Sign In";
 
   function onClickAuth(event:React.MouseEvent<HTMLAnchorElement>) {
-    if (!!user) {
+    if (appUser.isLoggedIn) {
       firebase.auth().signOut()
         .then(() => {
           console.log('successfully logged out');

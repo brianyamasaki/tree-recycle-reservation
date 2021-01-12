@@ -13,22 +13,11 @@ import Admin from './pages/Admin';
 import Reservations from './pages/Reservations';
 import NotFound from './pages/404';
 import './App.css';
-import { onAuthStateChange, AppUser, UserProvider } from './contexts/firebaseUser';
+import { AuthProvider } from './contexts/AuthProvider';
 
-const noUser: AppUser = {
-  loggedIn: false
-}
 function App() {
-  const [ appUser, setUser ] = React.useState(noUser);
-  React.useEffect(() => {
-    const unsubscribe = onAuthStateChange(setUser);
-    return () => {
-      unsubscribe();
-    }
-  },[]);
-
   return (
-    <UserProvider value={appUser} >
+    <AuthProvider>
       <div className="App container">
         <Menubar />
         <Router>
@@ -43,7 +32,7 @@ function App() {
           </Switch>
         </Router>
       </div>
-    </UserProvider>
+    </AuthProvider>
   );
 }
 

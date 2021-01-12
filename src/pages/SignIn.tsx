@@ -1,4 +1,4 @@
-import React, {useState, FormEvent, ChangeEvent} from 'react';
+import React, {useState} from 'react';
 import EmailPasswordForm, { EmailPasswordFormReturn } from '../components/EmailPasswordForm';
 import { useHistory, Link } from 'react-router-dom';
 import { signin } from '../utilities/auth';
