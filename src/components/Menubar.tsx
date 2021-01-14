@@ -33,9 +33,14 @@ const Menubar = () => {
               <NavLink href="/signin/" onClick={onClickAuth}>{authLinkText}</NavLink>
             </NavItem>
             { appUser.isLoggedIn ? (
+              <>
               <NavItem>
                 <NavLink href="/reservations/">Tree Pickup</NavLink>
               </NavItem>
+              <NavItem>
+                <NavLink href="/admin/">Tree Map</NavLink>
+              </NavItem>
+              </>
               ) : null
             }
             <NavItem>

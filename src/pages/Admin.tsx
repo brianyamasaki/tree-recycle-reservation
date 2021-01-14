@@ -38,7 +38,7 @@ const Admin = () => {
     return (
       <div className="col-md-12">
         <h1 className="text-center">Admin Portal</h1>
-        <Map location={defaultMapCenter} zoomLevel={15} trees={demoTrees}/>
+        <Map location={defaultMapCenter} zoomLevel={13} trees={demoTrees}/>
       </div>
     )
   }
