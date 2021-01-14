@@ -9,7 +9,7 @@ const Signin = () => {
   const submitEmail = ({ email, password}: EmailPasswordFormReturn) => {
     signin(email, password)
       .then(user=> {
-        history.push('/admin');
+        history.push('/reservations');
       })
       .catch(error => {
         setErrorMsg(error.message);
@@ -18,11 +18,11 @@ const Signin = () => {
     
   return (
     <>
-      <h1>Sign In</h1>
+      <h1 className="col-md-12 text-center">Sign In</h1>
       <EmailPasswordForm submitFn={submitEmail} errorMsg={errorMsg} />
-      <hr />
-      <h3>Create a Free Account</h3>
-      <p><Link to="/signup">Sign up</Link> for a free account</p>
+      <hr className="col-md-12 mt-4 mb-3" />
+      <h3 className="col-md-12 text-center">Create a Free Account</h3>
+      <p className="col-sm-12 text-center"><Link to="/signup">Sign up for a free account</Link></p>
     </>
   );
 }

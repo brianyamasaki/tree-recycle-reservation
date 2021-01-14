@@ -3,10 +3,11 @@ import firebase from "firebase/app";
 
 type appUser = {
   isLoggedIn:boolean;
-  user?: firebase.User ;
+  user: firebase.User | null ;
 }
 const noUser: appUser = {
   isLoggedIn: false,
+  user: null
 }
 export const AuthContext = React.createContext(noUser);
 
@@ -23,6 +24,7 @@ export const AuthProvider: FunctionComponent = ({ children }) => {
       } else {
         setUser({
           isLoggedIn: false,
+          user: null
         })
       }
     });

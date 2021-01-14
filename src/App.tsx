@@ -20,17 +20,19 @@ function App() {
     <AuthProvider>
       <div className="App container">
         <Menubar />
-        <Router>
-          <Switch>
-            <Route exact path="/" component={LandingPage} />
-            <Route exact path="/signin" component={SignIn} />
-            <Route exact path="/signup" component={SignUp} />
-            <Route exact path="/about" component={About} />
-            <Route exact path="/admin" component={Admin} />
-            <Route exact path="/reservations" component={Reservations} />
-            <Route path="*" component={NotFound} />
-          </Switch>
-        </Router>
+        <div className="row text-left">
+          <Router>
+            <Switch>
+              <Route exact path="/" component={LandingPage} />
+              <Route exact path="/signin" component={SignIn} />
+              <Route exact path="/signup" component={SignUp} />
+              <Route exact path="/about" component={About} />
+              <Route exact path="/admin" component={Admin} />
+              <Route exact path="/reservations" component={Reservations} />
+              <Route path="*" component={NotFound} />
+            </Switch>
+          </Router>
+        </div>
       </div>
     </AuthProvider>
   );

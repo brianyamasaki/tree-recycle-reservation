@@ -1,6 +1,7 @@
 import React from 'react';
 import firebase from 'firebase/app';
 import { useHistory } from 'react-router-dom';
+import { Col } from 'reactstrap';
 import EmailPasswordForm, { EmailPasswordFormReturn } from '../components/EmailPasswordForm';
 import PhoneAuthForm, { PhoneFormReturn } from '../components/PhoneAuthForm';
 declare global {
@@ -34,16 +35,16 @@ const Signup = () => {
       })
   }
   return (
-    <>
-      <h1>Sign Up For a Free Account</h1>
+    <Col sm={12}>
+      <h1 className="text-center">Sign Up For a Free Account</h1>
       <p>Please create an account to reserve a drop-off time. Your phone and email is only used to identify you and you will not receive junk email.</p>
-      <h3>Accout Using Mobile Phone</h3>
+      <h3 className="text-center">Accout Using Mobile Phone</h3>
       <p>Using this method will send a text message to your mobile phone. You may incur fees.</p>
       <PhoneAuthForm submitFn={submitPhone} errorMsg={phoneErrorMsg} />
       <hr />
-      <h3>Account Using Email</h3>
+      <h3 className="text-center">Account Using Email</h3>
       <EmailPasswordForm submitFn={submitEmail} errorMsg={errorMsg} />
-    </>
+    </Col>
   );
 }
 

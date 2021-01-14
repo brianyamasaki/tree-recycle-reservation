@@ -49,8 +49,8 @@ const PhoneAuthForm = ({submitFn, errorMsg}: FormProps) => {
   return (
     <Form onSubmit={submitPhone}>
         <FormGroup className="text-right" row>
-          <Label for="email" sm={2}>Email</Label>
-          <Col sm={10}>
+          <Label for="email" xs={3}>Email</Label>
+          <Col xs={9}>
             <Input 
               type="text" 
               name="phone" 
@@ -63,10 +63,12 @@ const PhoneAuthForm = ({submitFn, errorMsg}: FormProps) => {
             />
           </Col>
         </FormGroup>
-        <Alert isOpen={!!errorMsg}>{errorMsg}</Alert>
-        <Button id="sign-in-button" color="primary" type="submit" disabled={!isValidPhoneNumber(phoneNumber)}>
-          Create Phone Account
-        </Button>
+        <Col className="text-center">
+          <Alert isOpen={!!errorMsg}>{errorMsg}</Alert>
+          <Button id="sign-in-button" color="primary" type="submit" disabled={!isValidPhoneNumber(phoneNumber)}>
+            Create Phone Account
+          </Button>
+        </Col>
 
     </Form>
   )

@@ -30,11 +30,11 @@ const EmailPasswordForm = ({
     submitFn({ email, password});
   }
   return (
-    <>
+    <div className="col-md-12">
       <Form onSubmit={submitEmailPassword}>
         <FormGroup className="text-right" row>
-          <Label for="email" sm={2}>Email</Label>
-          <Col sm={10}>
+          <Label xs="3" for="email">Email</Label>
+          <Col xs="9">
             <Input 
               type="email" 
               name="email" 
@@ -48,8 +48,8 @@ const EmailPasswordForm = ({
           </Col>
         </FormGroup>
         <FormGroup className="text-right" row>
-          <Label for="password" sm={2}>Password</Label>
-          <Col sm={10}>
+          <Label for="password" xs={3}>Password</Label>
+          <Col xs={9}>
             <Input 
               type="password" 
               name="password" 
@@ -61,12 +61,14 @@ const EmailPasswordForm = ({
             />
           </Col>
         </FormGroup>
-        <Alert isOpen={!!errorMsg}>{errorMsg}</Alert>
-        <Button color="primary" type="submit" disabled={!isValidEmail(email)}>
-          Create Email Account
-        </Button>
+          <div className="col-md-12 text-center">
+          <Alert isOpen={!!errorMsg}>{errorMsg}</Alert>
+          <Button color="primary" type="submit" disabled={!isValidEmail(email)}>
+            Create Email Account
+          </Button>
+        </div>
       </Form>
-    </>
+    </div>
   );
 }
 
